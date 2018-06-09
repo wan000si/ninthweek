@@ -1,11 +1,9 @@
 package com.example.ninthweek.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "product")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,6 +12,10 @@ public class Product {
     private String description;
     private Integer price;
 
+    @OneToOne(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+    @JoinColumn(name = "inventoryId")
+    private Inventory inventory;
+    
     public Product(String name, String description, Integer price) {
         this.name = name;
         this.description = description;
