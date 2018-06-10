@@ -1,6 +1,12 @@
 package com.example.ninthweek.entity;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "orderform")
 public class OrderForm {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private double orderPrice;
     private double orderStatus;
@@ -9,7 +15,6 @@ public class OrderForm {
     private String payTime;
     private String withdrawTime;
     private Long userId;
-
 
     public OrderForm(double orderPrice, double orderStatus, String createTime, String finishTime, String payTime, String withdrawTime, Long userId) {
         this.orderPrice = orderPrice;
