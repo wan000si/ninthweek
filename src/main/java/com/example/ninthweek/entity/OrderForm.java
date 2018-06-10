@@ -8,6 +8,8 @@ public class OrderForm {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private Long productId;
+    private Integer purchaseCount;
     private double orderPrice;
     private double orderStatus;
     private String createTime;
@@ -15,6 +17,18 @@ public class OrderForm {
     private String payTime;
     private String withdrawTime;
     private Long userId;
+        
+    @OneToOne(fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
+    @JoinColumn(name = "productId")
+    private Product product;
+
+    public OrderForm() {
+    }
+
+    public OrderForm(Long productId, Integer purchaseCount) {
+        this.productId = productId;
+        this.purchaseCount = purchaseCount;
+    }
 
     public OrderForm(double orderPrice, double orderStatus, String createTime, String finishTime, String payTime, String withdrawTime, Long userId) {
         this.orderPrice = orderPrice;
@@ -32,6 +46,22 @@ public class OrderForm {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getProductId() {
+        return productId;
+    }
+
+    public void setProductId(Long productId) {
+        this.productId = productId;
+    }
+
+    public Integer getPurchaseCount() {
+        return purchaseCount;
+    }
+
+    public void setPurchaseCount(Integer purchaseCount) {
+        this.purchaseCount = purchaseCount;
     }
 
     public double getOrderPrice() {
