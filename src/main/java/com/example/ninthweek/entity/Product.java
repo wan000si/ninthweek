@@ -15,7 +15,7 @@ public class Product {
     @OneToOne(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
     @JoinColumn(name = "inventoryId")
     private Inventory inventory;
-    
+
     public Product(String name, String description, Integer price) {
         this.name = name;
         this.description = description;
