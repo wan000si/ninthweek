@@ -10,13 +10,13 @@ public class Product {
     private Long id;
     private String name;
     private String description;
-    private Integer price;
+    private double price;
 
     @OneToOne(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
     @JoinColumn(name = "inventoryId")
     private Inventory inventory;
 
-    public Product(String name, String description, Integer price) {
+    public Product(String name, String description, double price) {
         this.name = name;
         this.description = description;
         this.price = price;
@@ -49,11 +49,11 @@ public class Product {
         this.description = description;
     }
 
-    public Integer getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 }
