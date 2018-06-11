@@ -17,9 +17,9 @@ public class OrderForm {
     private String payTime;
     private String withdrawTime;
     private Long userId;
-        
+
     @OneToOne(fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
-    @JoinColumn(name = "productId")
+    @JoinColumn(name = "productId",insertable = false,updatable = false)
     private Product product;
 
     public OrderForm() {
