@@ -1,4 +1,7 @@
 package com.example.ninthweek.service;
 
-public class InventoryService {
+import com.example.ninthweek.entity.Inventory;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface InventoryService {
 }
