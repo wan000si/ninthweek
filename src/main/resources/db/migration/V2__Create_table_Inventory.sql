@@ -1,0 +1,5 @@
+CREATE TABLE Inventory(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    count INT NOT NULL DEFAULT '0',
+    lockedCount INT DEFAULT '0'
+) engine=InnoDB DEFAULT CHARSET = gbk;
