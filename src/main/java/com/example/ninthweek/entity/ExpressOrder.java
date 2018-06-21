@@ -16,7 +16,7 @@ public class ExpressOrder {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "orderId", insertable = false, updatable = false)
-    private OrderForm orderForm;
+    private Order order;
 
     public ExpressOrder() {
     }
@@ -81,11 +81,11 @@ public class ExpressOrder {
         this.deliverer = deliverer;
     }
 
-    public OrderForm getOrderForm() {
-        return orderForm;
+    public Order getOrder() {
+        return order;
     }
 
-    public void setOrderForm(OrderForm orderForm) {
-        this.orderForm = orderForm;
+    public void setOrder(Order order) {
+        this.order = order;
     }
 }

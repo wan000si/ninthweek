@@ -6,6 +6,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @EnableAutoConfiguration
-@RequestMapping("/orderforms")
-public class OrderFormController {
+@RequestMapping("/orders")
+public class OrderController {
 }

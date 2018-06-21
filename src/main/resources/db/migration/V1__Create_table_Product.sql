@@ -4,4 +4,4 @@ CREATE TABLE Product(
     description VARCHAR(255),
     price DOUBLE NOT NULL,
     inventoryId INT DEFAULT NULL
-) engine=InnoDB DEFAULT CHARSET = gbk;
+) engine=InnoDB DEFAULT CHARSET = utf8;

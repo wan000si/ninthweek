@@ -56,4 +56,12 @@ public class Product {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
+    }
 }
